@@ -34,16 +34,16 @@ function setup() {
   }
 
   //Creating Particles
-  if(frameCount%60 === 0){
-    particle.push(new Particles(random(width/2-10,width/2+10,10,10)));
-  }
-
-  base =new Ground(10,750,20,1200);
+  
+  base =new Ground(10,800,1200,20);
 
 }
 function draw() {
   Engine.update(engine)
   background(0);  
+  if(frameCount%60 === 0){
+    particle.push(new Particles(random(width/2-10,width/2+10),10,10));
+  }
 
 
   for(var j =0; j<particle.length; j++){
@@ -52,8 +52,10 @@ function draw() {
   for(var k =0; k<division.length; k++){
     division[k].display();
   }
+  for(var i=0; i<plinko.length; i++){
+    plinko[i].display();
+  }
 
-
-
+base.display();
  drawSprites();
 }

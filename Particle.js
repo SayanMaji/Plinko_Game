@@ -4,7 +4,7 @@ class Particles{
         var options ={
             restitution:0.4
         }
-        this.radius = 10;
+        this.radius = radius;
         this.body = Bodies.circle(x,y,this.radius,options);
         this.color = color(random(0,255), random(0,255), random(0,255));
         World.add(world,this.body);
